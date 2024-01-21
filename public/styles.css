@@ -12,10 +12,10 @@ body{
 
     display: grid;
     grid-template-areas: 
-    "header header header header header header"
-    "nav nav nav nav nav nav"
-    " contet content content content content lateral"
-    "footer footer footer  footer footer footer"
+    "header header header header"
+    "nav nav nav nav"
+    "content content content lateral"
+    "footer  footer footer footer"
     ;
 
     grid-template-rows: 100px 70px auto 70px;
@@ -99,7 +99,7 @@ body{
 
 .peli-item{
     flex-grow: 1;
-    width: 18%;
+    width: 20%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px, 0px, 6px, #ddd;
@@ -170,6 +170,23 @@ input[type="button"]{
     outline: 0;
     border-color: transparent;
 }
+
+.peli-item input[type="text"],
+.peli-item input[type="text"],
+.peli-item textarea{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #f6f7f9;
+    color: #454545;
+    width: 90%;
+    opacity: 4;
+    outline: 0;
+    border-color: transparent;
+}
+
 
 .footer{
     grid-area: footer;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
-export const Add = () => {
+export const Add = ({setListadoState}) => {
 
     const tituloComponente = "Añadir pelicula";
 
@@ -28,30 +29,15 @@ export const Add = () => {
         //Guardamos el estado
         setPeliState(pelicula)
 
-        //Guardar en el almacenamiento local
-        guardarEnStorage(pelicula)
+        
+        setListadoState(elementos =>{
+            return [...elementos, pelicula]
+        });
+
+        //Guardar en el almacenamiento local   
+        GuardarEnStorage("peliculas", pelicula);
+        
     }
-
-        const guardarEnStorage = pelicula =>{
-
-            //Conseguir los elementos que ya tenemos en LocalStorage
-            let elementos = JSON.parse(localStorage.getItem("peliculas"));
-
-            //Comprobar si es array
-            if(Array.isArray(elementos)){
-                //Añadir un elemento nuevo
-                elementos.push(pelicula)
-            }else{
-                //Crear un array para añadir el elemento
-                elementos = [pelicula]
-            }
-
-            localStorage.setItem("peliculas", JSON.stringify(elementos))
-            //Guardar en el LocalStorage
-
-            //Devolver objeto guardado
-            return pelicula;
-        }
 
     return (    
         <div className="add">
