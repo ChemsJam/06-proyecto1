@@ -35,7 +35,7 @@ function App() {
 
       {/* barra lateral */}
       <aside className="lateral">
-        <Buscador />
+        <Buscador listadoState={listadoState} setListadoState={setListadoState}/>
         <Add setListadoState={setListadoState}/>
       </aside>
 

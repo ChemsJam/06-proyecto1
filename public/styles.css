@@ -203,6 +203,10 @@ input[type="button"]{
     text-decoration: none;
 }
 
+.no-encontrado{
+    color:red;
+}
+
 @media (max-width: 1085px) {
     .content{
         flex-flow: column wrap;
